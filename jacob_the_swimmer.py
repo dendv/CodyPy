@@ -4,11 +4,30 @@ N = int(input())
 M = int(input())
 x = int(input())
 y = int(input())
-if N==x or N==y or M==x or M==y or x==0 or y==0:
-    print('0')
-elif x<=M/2 and y>x:
-    print(x)
-elif x>M/2 and y>x:
-    print(M-x)
+
+if N>=M:
+    D = N
+    K = M
 else:
-    print(y)
+    D = M
+    K = N
+if x>K/2 and y>D/2: # I четверть
+    if D-y>K-x:
+        print(K-x)
+    else:
+        print(D-y)
+if x>K/2 and y<D/2: # II четверть
+    if y>K-x:
+        print(K-x)
+    else:
+        print(y)
+if x<K/2 and y<D/2: # III четверть
+    if y>x:
+        print(x)
+    else:
+        print(y)
+if x<K/2 and y>D/2: # IV четверть
+    if D-y>x:
+        print(x)
+    else:
+        print(D-y)
