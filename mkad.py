@@ -3,6 +3,9 @@
 V = int(input())
 t = int(input())
 
+# Решение разработчика:
+# print((V * t) % 109)
+
 if abs(V*t)>108:
     print(abs((V*t)%109))
 else:
